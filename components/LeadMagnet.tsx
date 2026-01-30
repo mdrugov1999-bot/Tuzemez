@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CONTENT } from '../lib/content';
+import { content } from '../lib/content';
 import { track, Events } from '../lib/track';
 
 export const LeadMagnet: React.FC = () => {
@@ -21,7 +21,7 @@ export const LeadMagnet: React.FC = () => {
       Партнеры: ${names.p1} и ${names.p2}
       
       Ваши 7 вопросов для глубокого разговора:
-      ${CONTENT.leadMagnet.questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}
+      ${content.leadMagnet.questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}
       
       Рекомендация: Выберите 15 минут, когда вас никто не потревожит.
       Слушайте, не перебивая. Близость — это внимание.
@@ -41,8 +41,8 @@ export const LeadMagnet: React.FC = () => {
         <AnimatePresence mode="wait">
           {step === 'intro' && (
             <motion.div key="intro" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <h2 className="text-4xl font-display mb-6">{CONTENT.leadMagnet.title}</h2>
-              <p className="text-lg text-[#3E3B39]/60 mb-10">{CONTENT.leadMagnet.description}</p>
+              <h2 className="text-4xl font-display mb-6">{content.leadMagnet.title}</h2>
+              <p className="text-lg text-[#3E3B39]/60 mb-10">{content.leadMagnet.description}</p>
               <button 
                 onClick={startMagnet}
                 className="bg-[#3E3B39] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:bg-black transition-all"
@@ -83,18 +83,18 @@ export const LeadMagnet: React.FC = () => {
             <motion.div key="questions" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
               <div className="p-12 glass-card rounded-3xl shadow-xl min-h-[300px] flex flex-col justify-center">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#3E3B39]/40 mb-4 block">
-                  Вопрос {qIndex + 1} из {CONTENT.leadMagnet.questions.length}
+                  Вопрос {qIndex + 1} из {content.leadMagnet.questions.length}
                 </span>
                 <p className="text-2xl md:text-3xl font-display leading-relaxed">
-                  "{CONTENT.leadMagnet.questions[qIndex]}"
+                  "{content.leadMagnet.questions[qIndex]}"
                 </p>
               </div>
               <div className="flex gap-4">
                 <button 
-                  onClick={() => qIndex === CONTENT.leadMagnet.questions.length - 1 ? setStep('finished') : setQIndex(qIndex + 1)}
+                  onClick={() => qIndex === content.leadMagnet.questions.length - 1 ? setStep('finished') : setQIndex(qIndex + 1)}
                   className="flex-1 bg-[#3E3B39] text-white py-4 rounded-full font-medium shadow-md"
                 >
-                  {qIndex === CONTENT.leadMagnet.questions.length - 1 ? 'Завершить' : 'Следующий вопрос'}
+                  {qIndex === content.leadMagnet.questions.length - 1 ? 'Завершить' : 'Следующий вопрос'}
                 </button>
               </div>
             </motion.div>
@@ -114,7 +114,7 @@ export const LeadMagnet: React.FC = () => {
                 Скачать PDF-гайд
               </button>
               <p className="text-[10px] text-[#3E3B39]/40 leading-tight">
-                {CONTENT.leadMagnet.consentText}
+                {content.leadMagnet.consentText}
               </p>
             </motion.div>
           )}
