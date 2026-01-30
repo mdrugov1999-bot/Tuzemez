@@ -1,4 +1,4 @@
-export const content = { ... } as const; = { 
+export const content = {
   "brand": {
     "name": "Одной нитью",
     "tagline": "Карточная игра для пар: разговоры и действия, которые сближают",
