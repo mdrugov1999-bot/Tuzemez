@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { content, isMissing } from './lib/content';
+import { siteContent as content, isMissing } from './lib/content';
 import { track, Events } from './lib/track';
 import { AlertMissing } from './components/ui/AlertMissing';
 import { Header } from './components/Header';
