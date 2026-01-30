@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { CONTENT } from '../lib/content';
+import { content } from '../lib/content';
 
 export const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#FDFBF7]/80 backdrop-blur-md border-b border-[#E5DED4]/30">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="text-xl font-display font-bold tracking-tight">
-          {CONTENT.brandName}
+          {content.brandName}
         </div>
         
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#3E3B39]/70">
