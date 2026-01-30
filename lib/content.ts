@@ -1,4 +1,4 @@
-export const content = {
+{
   "brand": {
     "name": "Одной нитью",
     "tagline": "Карточная игра для пар: разговоры и действия, которые сближают",
@@ -364,12 +364,6 @@ export const content = {
     "missingValueMarker": "⚠️ заполнить в конфиге"
   }
 } as const;
-// helpers
-export const isMissing = (v: unknown) =>
-  v === null || v === undefined || (typeof v === "string" && v.trim() === "");
-
-// alias to match old imports if any remain
-export const CONTENT = content;
 
 // adapter for App.tsx shape
 export const siteContent = {
