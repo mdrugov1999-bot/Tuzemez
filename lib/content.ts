@@ -364,3 +364,61 @@ export const content = {
     "missingValueMarker": "⚠️ заполнить в конфиге"
   }
 } as const;
+// helpers
+export const isMissing = (v: unknown) =>
+  v === null || v === undefined || (typeof v === "string" && v.trim() === "");
+
+// alias to match old imports if any remain
+export const CONTENT = content;
+
+// adapter for App.tsx shape
+export const siteContent = {
+  isDev: content.dev?.showConfigMissingBanner ?? false,
+
+  brandName: content.brand?.name ?? "",
+  tagline: content.brand?.tagline ?? "",
+
+  price: content.commerce?.price?.amount ?? null,
+  oldPrice: content.commerce?.price?.oldAmount ?? null,
+  currency: content.commerce?.price?.currency ?? "RUB",
+
+  stockStatus: content.commerce?.availability?.status ?? "unknown",
+
+  links: {
+    youtubeVideo: content.sections?.howItWorks?.video?.url ?? "",
+    instagram: content.links?.social?.instagram ?? "",
+    telegram: content.links?.social?.telegram ?? "",
+    // удобные прямые ссылки на маркетплейсы
+    ozon:
+      content.links?.buyAlt?.find((x) => x.label?.toLowerCase().includes("ozon"))
+        ?.url ?? "",
+    wildberries:
+      content.links?.buyAlt?.find((x) => x.label?.toLowerCase().includes("wild"))
+        ?.url ?? "",
+  },
+
+  boxDetails: {
+    cardsCount: content.product?.whatsInside?.totalCards ?? null,
+    decksCount: content.product?.whatsInside?.decks?.length ?? null,
+    materials: content.product?.whatsInside?.box ?? "",
+    included: [
+      ...(content.product?.whatsInside?.decks?.map(
+        (d) => `${d.title} — ${d.description ?? ""}`.trim()
+      ) ?? []),
+      content.product?.whatsInside?.rulebook ? "Правила внутри" : "Правила",
+    ],
+  },
+
+  reviews:
+    content.sections?.trust?.items?.map((r) => ({
+      name: r.name ?? "",
+      text: r.text ?? "",
+      rating: 5,
+    })) ?? [],
+
+  legal: {
+    inn: "",
+    privacyLink: content.commerce?.legal?.privacyUrl ?? "",
+    copyright: `© ${new Date().getFullYear()} ${content.brand?.name ?? ""}`,
+  },
+} as const;
