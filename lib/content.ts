@@ -30,6 +30,7 @@ export const content = {
       "oldAmount": null
     },
     "availability": {
+      // fix build
       "status": "unknown",
       "note": ""
     },
