@@ -1,4 +1,4 @@
-{
+export const content = {
   "brand": {
     "name": "Одной нитью",
     "tagline": "Карточная игра для пар: разговоры и действия, которые сближают",
@@ -363,4 +363,4 @@
     "showConfigMissingBanner": true,
     "missingValueMarker": "⚠️ заполнить в конфиге"
   }
-}
+} as const;
