@@ -1,4 +1,4 @@
-{
+export const content = {
   "brand": {
     "name": "Одной нитью",
     "tagline": "Карточная игра для пар: разговоры и действия, которые сближают",
@@ -416,8 +416,3 @@ export const siteContent = {
     copyright: `© ${new Date().getFullYear()} ${content.brand?.name ?? ""}`,
   },
 } as const;
-// --- compat exports (чтобы сборка не падала от старых импортов) ---
-export const CONTENT = content;
-
-export const isMissing = (v: unknown) =>
-  v === null || v === undefined || (typeof v === "string" && v.trim() === "");
