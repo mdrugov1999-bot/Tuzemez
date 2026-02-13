@@ -17,7 +17,7 @@ export const FAQ: React.FC = () => {
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-4xl font-display text-center mb-16">Частые вопросы</h2>
         <div className="space-y-4">
-          {content.faq.map((item, i) => (
+          {content.faq?.items.map((item, i) => (
             <div key={i} className="border-b border-[#E5DED4] last:border-0">
               <button 
                 onClick={() => toggle(i)}
