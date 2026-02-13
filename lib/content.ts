@@ -26,9 +26,9 @@ export const content = {
   "commerce": {
     "mode": "links",
     "price": {
-      "amount": 1899,
+      "amount": 9999,
       "currency": "RUB",
-      "oldAmount": 2090
+      "oldAmount": 99999
     },
     "availability": {
       "status": "unknown",
