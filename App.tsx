@@ -9,6 +9,7 @@ import { LeadMagnet } from './components/LeadMagnet';
 import { Calculator } from './components/Calculator';
 import { FAQ } from './components/FAQ';
 
+
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });

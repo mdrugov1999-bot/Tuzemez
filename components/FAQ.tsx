@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { content } from '../lib/content';
 import { track, Events } from '../lib/track';
 
+
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
